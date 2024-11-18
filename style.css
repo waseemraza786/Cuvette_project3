@@ -1,0 +1,333 @@
+*{
+    padding: 0;
+    margin:0;
+    box-sizing: border-box;
+}
+body{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgb(165, 208, 101);
+
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.score-con{
+    max-width: 100%;
+    width: 700px;
+    border: 3px solid white;
+    margin-top: 2rem;
+    border-radius: 10px;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    padding: 23px 35px;
+    color: white;
+    min-height: 28vh;
+
+}
+.logo{
+    font-size: 36px;
+}
+ .score{
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+ }
+ .us{
+    border: 2px solid black;
+    background-color: white;
+    color: black;
+    margin: 36px;
+    font-size: 1.3rem;
+    width: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 12px;
+    border-radius: 9px;
+
+ }
+ .cs{
+    border: 2px solid black;
+    font-size: 1.3rem;
+    width: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 12px;
+    background-color: white;
+    color: black;
+    border-radius: 9px;
+
+
+ }
+ .score span{
+    font-size: 36px;
+    font-weight: 700;
+ }
+.game-con{
+    width: 100%;
+    min-height: 69vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.info{
+    width: 840px;
+    height: 2vh;
+    font-size: 1.2rem;
+    margin: 1rem 0 0 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.option{
+    max-width: 100%;
+    width: 700px;
+    min-height: 49vh;
+    display: grid;
+    place-content: center;
+    position: relative;
+    padding-top: 5%;
+
+
+}
+.con{
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    padding: 13px;
+}
+.con:hover{
+    background-color: black;
+}
+.computer{
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    padding: 13px;
+    display: none;
+}
+.sci-con{
+    background-color: rgb(129, 13, 238);
+
+    right: 8rem;
+    top: 3%;
+    cursor: pointer;
+
+}
+.rock-con{
+    background-color: rgb(12, 50, 85);
+    
+    left: 17.5rem;
+    top: 68%;
+    cursor: pointer;
+}
+.paper-con{
+    background-color: goldenrod;
+    left: 8rem;
+    top: 3%;
+    cursor: pointer;
+}
+.item{
+    background-color: white;
+    height: 100%;
+    border-radius: 50%;
+    display: grid;
+    place-content: center;
+}
+
+.user,
+.machine{
+    opacity: 0;
+    color: white;
+}
+.win-modal{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    place-content: center;
+    top: 0;
+    text-align: center;
+    display: none;
+
+}
+.win-modal::before{
+    position: absolute;
+    content: "";
+    background-color: black;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+}
+.winner,
+.play{
+    z-index: 1;
+}
+.winner{
+    color: white;
+    margin-bottom: 1rem;
+}
+.play{
+    background: white;
+    letter-spacing: 3px;
+    color: black;
+    /* outline: none; */
+    cursor: pointer;
+    padding: 15px 18px;
+    font-size: 17px;
+    border: 2px solid white;
+    border-radius: 6px;
+}
+.play:hover{
+    border: 2px solid black;
+}
+
+.show{
+    left: 4rem;
+    top: 3%;
+}
+.right{
+    left: 29.5rem;
+    top: 3%;
+}
+.rule{
+    
+    display: flex;
+    align-items: end;
+    justify-content: end;
+    margin-right: 36px;
+}
+.rule button{
+    position:absolute;
+    right: 36px;
+    margin-bottom: 50px;
+    font-size: 1rem;
+    padding: 12px 30px;
+    border-radius: 9px;
+    color: white;
+    background-color: rgb(165, 208, 101);
+
+    border: 2px solid white;
+    
+}
+.rule button:hover{
+    cursor: pointer;
+    color: black;
+    border: 2px solid black;
+}
+.msgrule{
+    border: 10px solid white;
+    background-color: rgb(12, 82, 12);
+    border-radius: 20px;
+    width: 200px;
+    color: white;
+    position: absolute;
+    margin: 16px;   
+    visibility: hidden;  
+    
+    
+}
+.msgrule h3{
+    padding: 3px;
+    text-align: center;
+    margin: 3px;
+}
+.msgrule ul{
+    list-style: square ;
+    padding: 13px;
+}
+.msgrule ul li{
+    margin: 5px;
+    text-align: left;
+}
+.boy{
+    position: absolute;
+    top: 32%;
+    right: -36px;
+    visibility: hidden;
+    width: 300px;
+    font-size: 13px;
+}
+.crossx{
+    position: absolute;
+    width: 222px;
+    z-index: 1;
+    display: flex;
+    justify-content: right;
+    visibility: hidden;
+}
+.cross svg:hover{
+    cursor: pointer;
+}
+.next{
+    position:absolute;
+    right: 10px;
+    bottom: -27px;
+    margin-bottom: 50px;
+    font-size: 1rem;
+    padding: 12px 30px;
+    border-radius: 9px;
+    color: white;
+    background-color: rgb(165, 208, 101);
+
+    border: 2px solid white;
+    visibility: hidden;
+    cursor: pointer;
+
+}
+.next:hover{
+    border: 2px solid black;
+    color: black;
+
+}
+.nextpage{
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background-color: rgb(165, 208, 101);
+    color: white;
+    visibility: hidden;
+
+}
+.champ img{
+    height: 250px;
+    width: 250px;
+    margin-top: 5%;
+    
+}
+.title{
+    font-size: 2rem;
+    margin-top: 50px;
+}
+.title P{
+    padding: 6px;
+}
+.pa{
+    background: white;
+    letter-spacing: 3px;
+    color: black;
+    cursor: pointer;
+    padding: 15px 18px;
+    font-size: 17px;
+    border: 2px solid white;
+    border-radius: 6px;
+    top: 500px;
+    position: absolute;
+    visibility: hidden;
+
+}
+.pa:hover{
+    border: 2px solid black;
+}
+
